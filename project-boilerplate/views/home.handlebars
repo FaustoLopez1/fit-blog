@@ -1,0 +1,12 @@
+<h1>Home</h1>
+{{#if isLoggedIn}}
+  <h2>Welcome, {{user.username}}!</h2>
+  <p>Your id is <strong>{{user.id}}</strong>.</p>
+{{/if}}
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quasi ab harum
+  sequi quis iure voluptatibus doloremque dicta optio maiores!</p>
+{{#unless isLoggedIn}}
+  <br />
+  <a class='btn' href='/signup'>Sign Up</a>
+{{/unless}}
