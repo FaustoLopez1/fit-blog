@@ -1,0 +1,13 @@
+html {
+  background: url("../img/fitness.png") no-repeat center center fixed;
+  background-size: cover;
+}
+.btn {
+  position: fixed;
+  bottom: 5px;
+}
+
+h4 {
+  text-align: right;
+  padding: 5%;
+}
