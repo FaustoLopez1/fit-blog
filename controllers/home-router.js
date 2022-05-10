@@ -30,11 +30,19 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-  res.render("login", { title: "Log-In Page" });
+  res.render("login", { title: "Log-In" });
 });
 
 router.get("/signup", (req, res) => {
-  res.render("signup", { title: "Sign-Up Page" });
+  res.render("signup", { title: "Sign-Up" });
 });
 
+//dashboard page
+router.get("/dashboard", (req, res) => {
+  res.render("dashboard", { title: "Dashboard" });
+});
+//nutrition page
+router.get("/nutrition", (req, res) => {
+  res.render("nutrition", { title: "Nutrition" });
+});
 module.exports = router;
