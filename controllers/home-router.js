@@ -45,4 +45,10 @@ router.get("/dashboard", (req, res) => {
 router.get("/nutrition", (req, res) => {
   res.render("nutrition", { title: "Nutrition" });
 });
+
+//main page route
+router.get("/#", (req, res) => {
+  res.render("HEALTH & WELLNESS", { title: "Health & Wellness" });
+});
+
 module.exports = router;
