@@ -1,7 +1,11 @@
-<h2> My Nutrition Page</h2>
+<h2>MY NUTRITION PAGE</h2>
 <p class="white-text">Welcome, {{user.username}}!</p>
 {{!-- {{#if isLoggedIn}} --}}
 <body>
+<form id="form"> 
+  <input type="search" id="query" name="q" placeholder="Search...">
+  <button>Search</button>
+</form>
 <h3 class="white-text">Latest Recipes</h3>
  <div class="row">
     <div class="col s6">
