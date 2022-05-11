@@ -11,6 +11,7 @@ const { User } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
+    console.log("Hii");
     let user;
     if (req.session.isLoggedIn) {
       user = await User.findByPk(req.session.userId, {
@@ -47,7 +48,7 @@ router.get("/nutrition", (req, res) => {
 });
 
 //main page route
-router.get("/#", (req, res) => {
+router.get("/", (req, res) => {
   res.render("HEALTH & WELLNESS", { title: "Health & Wellness" });
 });
 
