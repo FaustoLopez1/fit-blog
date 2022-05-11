@@ -14,22 +14,29 @@
   <body>
     <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      <nav>
-        <div class="nav-wrapper">
-        <a href="#" class="brand-logo">HEALTH & WELLNESS</a>
+        <nav>
+          <div class="nav-wrapper">
+          <a href="#"class="brand-logo s12 m6">HEALTH & WELLNESS</a>
         {{#if isLoggedIn}}
-          <button class='btn btn-logout'>Log Out</button>
+            <button class='btn btn-logout'>Log Out</button>
         {{else}}
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href='/dashboard'>Dashboard</a></li>
+              <li><a href='/nutrition'>Nutrition</a></li>
+          {{!-- <li><a href='/home'>Home</a></li> --}}
+              <li><a href='/login'>Login</a></li>
+            </ul>
+          </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
           <li><a href='/dashboard'>Dashboard</a></li>
           <li><a href='/nutrition'>Nutrition</a></li>
-          <li><a href='/home'>Home</a></li>
           <li><a href='/login'>Login</a></li>
         </ul>
         {{/if}}
-      </div>
-    </nav>
-  </header>
+      
+    </header>
     {{{body}}}
     <script src='/js/main.js'></script>
   </body>

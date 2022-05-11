@@ -10,6 +10,7 @@ const sessionMiddleware = require("./config/session");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+
 // setup app middleware
 app.use(sessionMiddleware);
 app.use(express.static(path.join(__dirname, "public")));
