@@ -45,4 +45,9 @@ router.get("/dashboard", (req, res) => {
 router.get("/nutrition", (req, res) => {
   res.render("nutrition", { title: "Nutrition" });
 });
+
+//CREATE button on dashboard
+router.get("/create", (req, res) => {
+  res.render("create", { title: "Create" });
+});
 module.exports = router;

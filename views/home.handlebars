@@ -1,7 +1,6 @@
 {{!-- <h1>My Health Blog</h1> --}}
 {{#if isLoggedIn}}
   <h2>Welcome, {{user.username}}!</h2>
-  <p>Your id is <strong>{{user.id}}</strong>.</p>
 {{/if}}
 <body>
 <div>
@@ -9,7 +8,7 @@
 </div>
 
 {{#unless isLoggedIn}}
-    <a class='btn pulse'><href='/signup'>Sign Up</a>
+    <a class='btn pulse' href='/signup'>Sign Up</a>
 {{/unless}}
 {{{body}}}
     <script src='/js/main.js'></script>
