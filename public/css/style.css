@@ -21,3 +21,16 @@ h4 {
   display: flex;
   flex-wrap: wrap;
 }
+form {
+  background-color: rgb(245, 158, 172);
+  width: 300px;
+  height: 44px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+h2 {
+  color: rgba(226, 255, 255, 0.952);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
