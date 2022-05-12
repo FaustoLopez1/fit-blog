@@ -1,8 +1,8 @@
 <h2>MY NUTRITION PAGE</h2>
 <p class="white-text">Welcome, {{user.username}}!</p>
-{{#if isLoggedIn}}
+{{!-- {{#if isLoggedIn}} --}}
 <body>
-<form id="form"> 
+<form id="searchform"> 
   <input type="search" id="query" name="q" placeholder="Search...">
   <button id="search-button">Search</button>
 </form>
@@ -39,7 +39,7 @@
     </div>
   </div>
 </div>
-{{/if}}
+{{!-- {{/if}} --}}
 
 {{{body}}}
 
