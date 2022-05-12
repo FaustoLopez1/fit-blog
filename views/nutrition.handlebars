@@ -1,6 +1,6 @@
 <h2>MY NUTRITION PAGE</h2>
 <p class="white-text">Welcome, {{user.username}}!</p>
-{{!-- {{#if isLoggedIn}} --}}
+{{#if isLoggedIn}}
 <body>
 <form id="form"> 
   <input type="search" id="query" name="q" placeholder="Search...">
@@ -51,10 +51,8 @@
     </div>
   </div>
 </div>
-{{!-- {{/if}} --}}
-{{#unless isLoggedIn}}
-    <a class='btn pulse'><href='/signup'>Sign Up</a>
-{{/unless}}
+{{/if}}
+
 {{{body}}}
     
 </body>

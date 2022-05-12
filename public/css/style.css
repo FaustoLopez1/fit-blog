@@ -2,14 +2,14 @@ html {
   background: url("../img/fitness.png") no-repeat center center fixed;
   background-size: cover;
 }
-.btn {
+/* .btn {
   position: fixed;
   bottom: 5px;
-}
+} */
 
 h4 {
   text-align: right;
-  padding: 5%;
+  padding: 4%;
 }
 /* .row {
   display: inline;
@@ -35,8 +35,5 @@ h2 {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-#navwrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
+/* .btn-logout {
+} */

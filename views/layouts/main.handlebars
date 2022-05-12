@@ -18,28 +18,31 @@
           <div class="nav-wrapper">
           <a href="/"class="brand-logo s12 m6">HEALTH & WELLNESS</a>
         {{#if isLoggedIn}}
-        <div id="navwrapper right-align">
-          <button class='btn btn-logout right'>Log Out</button>
-        </div>
+        
+            {{!-- <button class='btn btn-logout'>Log Out</button> --}}
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href='/dashboard'>Dashboard</a></li>
               <li><a href='/nutrition'>Nutrition</a></li>
-          
-          {{else}}
-              <li><a href='/login'>Login</a></li>
+              <button class="no-button" id="logout">Logout</button>
             </ul>
+            <ul class="sidenav" id="mobile-demo">
+              <li><a href='/dashboard'>Dashboard</a></li>
+              <li><a href='/nutrition'>Nutrition</a></li>
+              {{!-- <li><a href='/login'>Login</a></li> --}}
+            </ul>
+          {{else}}
+              {{!-- <li><a href='/login'>Login</a></li> --}}
+           
           </div>
         </nav>
-        <ul class="sidenav" id="mobile-demo">
-          <li><a href='/dashboard'>Dashboard</a></li>
-          <li><a href='/nutrition'>Nutrition</a></li>
-          <li><a href='/login'>Login</a></li>
-        </ul>
         {{/if}}
       
     </header>
     {{{body}}}
-    <script src='/js/main.js'></script>
+    {{!-- <script src='/js/main.js'></script> --}}
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>

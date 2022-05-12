@@ -11,7 +11,6 @@ const { User } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
-    console.log("Hii");
     let user;
     if (req.session.isLoggedIn) {
       user = await User.findByPk(req.session.userId, {
