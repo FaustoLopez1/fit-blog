@@ -27,10 +27,16 @@ form {
   height: 44px;
   border-radius: 5px;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   align-items: center;
 }
 h2 {
-  color: rgba(226, 255, 255, 0.952);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba(217, 248, 248, 0.952);
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#navwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
