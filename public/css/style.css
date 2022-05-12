@@ -15,3 +15,32 @@ h4 {
 h3 {
   color: black;
 }
+/* .row {
+  display: inline;
+  flex: wrap;
+  overflow: visible;
+} */
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+}
+form {
+  background-color: rgb(245, 158, 172);
+  width: 300px;
+  height: 44px;
+  border-radius: 5px;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+}
+h2 {
+  color: rgba(217, 248, 248, 0.952);
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#navwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
