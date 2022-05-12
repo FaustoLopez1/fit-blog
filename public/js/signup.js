@@ -2,19 +2,11 @@
 const handleSignupSubmit = async (event) => {
   event.preventDefault();
   try {
-    const username = document.querySelector("#username").value.trim();
-    const password = document.querySelector("#password").value.trim();
-    const confirmPassword = document
-      .querySelector("#confirm-password")
-      .value.trim();
+    const username = document.querySelector("#username-signup").value.trim();
+    const password = document.querySelector("#password-signup").value.trim();
 
     if (!username || !password) {
       alert("You must provide a username and password.");
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      alert("Passwords to not match.");
       return;
     }
 
@@ -39,5 +31,5 @@ const handleSignupSubmit = async (event) => {
 };
 
 document
-  .querySelector(".signup-form")
+  .querySelector("#signup-form")
   .addEventListener("submit", handleSignupSubmit);
