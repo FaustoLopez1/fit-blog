@@ -6,7 +6,7 @@
   <input type="search" id="query" name="q" placeholder="Search...">
   <button id="search-button">Search</button>
 </form>
-<h3 class="white-text">Latest Recipes</h3>
+<h3 class="white-text">Healthy Recipes</h3>
   {{#each searchResults as |recipe|}}
     <div class="row">
       <div class="col s6">
@@ -14,33 +14,15 @@
           <div class="card-image">
             <img src={{recipe.image}}>
             <span class="card-title">{{recipe.title}}</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
           </div>
           <div class="card-content">
-            <p>I am a very simple recipe. This is a placeholder for now! This is fun. </p>
+           <p>{{{recipe.summary}}}</p>
           </div>
         </div>
       </div>
     </div>
   {{/each}}
-<h3 class=" white-text text-darken-4">Saved Recipes</h3>
-<div class="row">
-    <div class="col s6">
-      <div class="card">
-        <div class="card-image">
-          <img src="img/image3.png">
-          <span class="card-title">Unhealthy Recipe </span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>I am a double double.. Unhealthy recipe. This is just a placeholder, no need to worry! </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 {{!-- {{/if}} --}}
 
 {{{body}}}
-
 </body>
