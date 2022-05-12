@@ -1,79 +1,43 @@
-# Express-Handlebars Boilerplate <!-- omit in toc -->
+# Fit-Blog
 
-This boilerplate may be used as a starting point for building a full-stack app with Handlebars, Express, and Sequelize/MySQL. This boilerplate if configured for easy deployment on Heroku with JawsDB MySQL add-on.
+## Description
 
-- [Setup](#setup)
-- [Development](#development)
-- [Sessions](#sessions)
-- [Authentication](#authentication)
-- [Templates](#templates)
-- [Code Style](#code-style)
-- [Deploy to Heroku](#deploy-to-heroku)
+Kelly is wanting to live a healthier lifestyle, inspired by her friends and family she wants a curated place to interact with other people to specifically discuss workouts, meals, and overall healthy lifestyle!
 
-## Setup
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#installation)
+- [Credits](#credits)
+- [License](#license)
+
+## Installation
 
 1. Run `npm i`.
 2. You will need an existing MySQL database.
 3. Create `.env` file with MySQL credentials for local development and a SECRET. Refer to [.env.EXAMPLE](./.env.EXAMPLE)
 4. Run `npm start` to start the app.
 
-## Development
+## Usage
 
-This boilerplate includes [nodemon](https://nodemon.io/). Run `npm run watch` to start the server in watch mode during development.
+<!-- IMAGE/GIF SHOWN HERE OF WEBPAGE -->
 
-## Sessions
+1. Create account or Login if you have an existing account
+2. Post your workout, meal, or your daily motivation
+3. Interact with other users by commenting on other people's post
+4. Search for healthy recipes on the nutrition page
 
-[express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) are used for session management. Configure cookies and sessions in [config/session.js](./config/session.js)
+## Credits
 
-## Authentication
+Lily Namou Github: lilynamou
+Fausto Lopez Github: FaustoLopez1
+Fiona Carroll Github: fcarroll12
+Zeth Satentes Github: ZestyWings
 
-Passwords are hashed using [bcrypt](https://www.npmjs.com/package/bcrypt). Middleware for protected routes redirects to `/login`. This can be modified by updating [util/withAuth.js](./util/withAuth.js).
+## Badges
 
-## Templates
-
-[Handlebars.js](https://handlebarsjs.com/) and [express-handlebars](https://www.npmjs.com/package/express-handlebars) are used for rendering templates.
-
-You can add your own custom helper functions by exporting them from [util/helpers.js](./util/helpers.js).
-
-## Code Style
-
-[ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) are included for enforcing consistent code quality and format. The default configuration includes the ESLint recommended plugin, the Prettier plugin, plus a couple of additional rules. Modify [.eslintrc.js](./.eslintrc.json) to customize the rules.
-
-## Deploy to Heroku
-
-### Prerequisites
-
-Sign up for an [Heroku](https://id.heroku.com/login) account and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
-
-The app must be setup using Git for version control in order to deploy on Heroku
-following this guide. Be sure to initialize Git before proceeding if you did not
-initially create this project by using the template repo.
-
-### Create and Configure a Heroku App
-
-The code for this boilerplate is pre-configured to deploy to Heroku and connect to the JAWS DB add-on for MySQL. In order to deploy, you must provision the JAWS DB add-on.
-
-**IMPORTANT:** Payment info. must be provided in order to use the JawsDB MySQL
-add-on. The service is currently free with limitations. (as of 11/2/2021)
-However, you must provide a credit card to use the service.
-
-1. Create a Heroku app in the command line. `heroku create <optionally-provide an app name>`
-
-2. Provision the [JawsDB MySQL add-on](https://elements.heroku.com/addons/jawsdb) with the free pricing plan. `heroku addons:create jawsdb:kitefin`
-
-3. Add environmental variables to the heroku config. The boilerplate uses
-   `SECRET` to sign the session id cookie. Use a tool to generate a long
-   randomized string for this value. (e.g. `hsKVlvYcC5b#Fw1FS*qz`) Add `SECRET`
-   to config by running `heroku config:set SECRET=<your long random secret>`.
-
-4. Use the same command to add any other environmental variables required for
-   your app to function. (`heroku config:set <name>=<value>`)
-
-5. Deploy the app by running `git push heroku main`. (Use the command again to deploy updates.)
-
-6. Open your app in the browser with `heroku open`.
-
-### Seed JawsDB
-
-Running `heroku run npm run seed` will run the seed script in Heroku if your
-seeds are required for production.
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
