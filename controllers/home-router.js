@@ -1,6 +1,7 @@
+require("dotenv").config();
+const fetch = require("node-fetch");
 const router = require("express").Router();
-const { User } = require("../models");
-
+const { getUserFromSession } = require("../util/helpers");
 // use withAuth middleware to redirect from protected routes.
 // const withAuth = require("../util/withAuth");
 
@@ -12,13 +13,7 @@ const { User } = require("../models");
 router.get("/", async (req, res) => {
   try {
     console.log("Hii");
-    let user;
-    if (req.session.isLoggedIn) {
-      user = await User.findByPk(req.session.userId, {
-        exclude: ["password"],
-        raw: true,
-      });
-    }
+    const user = getUserFromSession(req);
     res.render("home", {
       title: "Home Page",
       isLoggedIn: req.session.isLoggedIn,
@@ -40,16 +35,37 @@ router.get("/signup", (req, res) => {
 
 //dashboard page
 router.get("/dashboard", (req, res) => {
-  res.render("dashboard", { title: "Dashboard" });
+  const user = getUserFromSession(req);
+  res.render("dashboard", { title: "Dashboard", user });
 });
 //nutrition page
-router.get("/nutrition", (req, res) => {
-  res.render("nutrition", { title: "Nutrition" });
+router.get("/nutrition", async (req, res) => {
+  const { q } = req.query;
+  console.log(q);
+  let searchResults = [];
+  if (q) {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Host":
+          "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+        "X-RapidAPI-Key": process.env.RAPIDKEY,
+      },
+    };
+    const response = await fetch(
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${q}`,
+      options
+    );
+    searchResults = await response.json();
+    searchResults = searchResults.results;
+  }
+  const user = getUserFromSession(req);
+  res.render("nutrition", { title: "Nutrition", user, searchResults });
 });
 
 //main page route
-router.get("/", (req, res) => {
-  res.render("HEALTH & WELLNESS", { title: "Health & Wellness" });
-});
+// router.get("/", (req, res) => {
+//   res.render("HEALTH & WELLNESS", { title: "Health & Wellness" });
+// });
 
 module.exports = router;
