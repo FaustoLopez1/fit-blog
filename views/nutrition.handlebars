@@ -2,7 +2,7 @@
 <p class="white-text">Welcome, {{user.username}}!</p>
 {{!-- {{#if isLoggedIn}} --}}
 <body>
-<form id="form"> 
+<form id="searchform"> 
   <input type="search" id="query" name="q" placeholder="Search...">
   <button id="search-button">Search</button>
 </form>
@@ -23,8 +23,6 @@
     </div>
   {{/each}}
 {{!-- {{/if}} --}}
-{{#unless isLoggedIn}}
-    <a class='btn pulse'><href='/signup'>Sign Up</a>
-{{/unless}}
+
 {{{body}}}
 </body>
