@@ -14,6 +14,27 @@ router.post("/", async (req, res) => {
   }
 });
 
+// router.post("/signup", async (req, res) => {
+//   User.create({
+//     username: req.body.username,
+//     password: req.body.password
+// })
+
+// .then(dbUserData => {
+//         req.session.save(() => {
+//             req.session.user_id = dbUserData.id;
+//             req.session.username = dbUserData.username;
+//             req.session.loggedIn = true;
+
+//             res.json(dbUserData);
+//         });
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
+// });
+
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -165,7 +186,6 @@ router.delete('/:id', (req, res) => {
           res.status(500).json(err);
       });
 });
-
 
 
 
