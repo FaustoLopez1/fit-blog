@@ -18,27 +18,16 @@
           <div class="nav-wrapper">
           <a href="/"class="brand-logo s12 m6">HEALTH & WELLNESS</a>
         {{#if isLoggedIn}}
-        <div id="navwrapper right-align">
-          <button class='btn btn-logout right'>Log Out</button>
-        </div>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href='/dashboard'>Dashboard</a></li>
-              <li><a href='/nutrition'>Nutrition</a></li>
-          
-          {{else}}
-              <li><a href='/login'>Login</a></li>
-            </ul>
-          </div>
-        </nav>
-        <ul class="sidenav" id="mobile-demo">
+          <button class='btn btn-logout'>Log Out</button>
+        {{/if}}
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href='/dashboard'>Dashboard</a></li>
           <li><a href='/nutrition'>Nutrition</a></li>
           <li><a href='/login'>Login</a></li>
         </ul>
-        {{/if}}
-      
-    </header>
+      </div>
+    </nav>
+  </header>
     {{{body}}}
     <script src='/js/main.js'></script>
   </body>
