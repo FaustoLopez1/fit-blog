@@ -41,7 +41,6 @@ router.get("/dashboard", (req, res) => {
 //nutrition page
 router.get("/nutrition", async (req, res) => {
   const { q } = req.query;
-  console.log(q);
   let searchResults = [];
   if (q) {
     const options = {
@@ -53,7 +52,7 @@ router.get("/nutrition", async (req, res) => {
       },
     };
     const response = await fetch(
-      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${q}`,
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${q}&addRecipeInformation=True`,
       options
     );
     searchResults = await response.json();
