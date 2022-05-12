@@ -19,14 +19,12 @@
         <a href="#" class="brand-logo">HEALTH & WELLNESS</a>
         {{#if isLoggedIn}}
           <button class='btn btn-logout'>Log Out</button>
-        {{else}}
+        {{/if}}
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href='/dashboard'>Dashboard</a></li>
           <li><a href='/nutrition'>Nutrition</a></li>
-          <li><a href='/home'>Home</a></li>
           <li><a href='/login'>Login</a></li>
         </ul>
-        {{/if}}
       </div>
     </nav>
   </header>

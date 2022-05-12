@@ -3,26 +3,25 @@
     <h3 class="card-header">Daily Journal</h3>
     <form class="card-body new-post-form" id="new-post-form">
         <label for="post-title" class="form-label">Workout</label>
-        <input type="text" id="post-title" name="post-title" class="form-input" />
+        <input type="text" id="post-title" name="title" class="form-input" />
 
 
         <label class="form-label" for="content">Meal</label>
         <input id="content" name="content" class="form-input" />
 
-        <label class="form-label" for="content">Daily Motivation: What inspires you today?</label>
+        <label class="form-label" for="content">Motivation</label>
         <input id="content" name="daily motivation" class="form-input" />
-
-        <button type="submit" class="btn">Create</button>
+        
     </form>
 </div>
       <div class="form-group">
-        <button class="btn btn-large brown darken-2">Create</button>
+        <button class="btn btn-submit">Post</button>
       </div>
     </form>
   </div>
 
 {{#if posts.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 post-list">
     <h3>All Posts:</h3>
 
     {{#each posts as |post|}}
@@ -39,4 +38,4 @@
   {{/if}}
 </div>
 
-<script src="./js/dashboard.js"></script>
+<script src="./public/js/dashboard.js"></script>
