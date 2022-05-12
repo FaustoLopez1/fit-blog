@@ -1,10 +1,11 @@
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="Workout"]').value;
-    const content = document.querySelector('input[name="Meal"]').value;
+    const title = document.getElementById('title').value;
+    const content = document.getElementById('content').value;
+    console.log(title,content);
   
-    const response = await fetch(`/api/post`, {
+    const response = await fetch(`/api/post/`, {
       method: 'POST',
       body: JSON.stringify({
         title,
@@ -22,15 +23,15 @@ async function newFormHandler(event) {
     }
   };
   
-document.querySelector('#new-post-form').addEventListener('submit', newFormHandler);
+// document.querySelector('#new-post-form').addEventListener('submit', newFormHandler);
 
 
-document.querySelector(".btn-post").addEventListener("click", async () => {
-  try {
-    await fetch("/api/users/post", { method: "POST" });
-    document.location.replace("/single-post");
-  } catch (error) {
-    console.error(error);
-    console.error("Failed to Post.");
-  }
-});
+document.querySelector(".btn-post").addEventListener("click", newFormHandler); 
+  // try {
+  //   await fetch("/api/users/post", { method: "POST" });
+  //   document.location.replace("/single-post");
+  // } catch (error) {
+  //   console.error(error);
+  //   console.error("Failed to Post.");
+  // }
+;

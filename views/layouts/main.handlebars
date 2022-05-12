@@ -18,17 +18,19 @@
           <div class="nav-wrapper">
           <a href="/"class="brand-logo s12 m6">HEALTH & WELLNESS</a>
         {{#if isLoggedIn}}
-          <button class='btn btn-logout'>Log Out</button>
-        {{/if}}
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href='/dashboard'>Dashboard</a></li>
           <li><a href='/nutrition'>Nutrition</a></li>
-          <li><a href='/login'>Login</a></li>
+          <button class='btn btn-logout'>Log Out</button>
         </ul>
+        {{/if}}
       </div>
     </nav>
   </header>
     {{{body}}}
-    <script src='/js/main.js'></script>
+    {{!-- <script src='/js/main.js'></script> --}}
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>
