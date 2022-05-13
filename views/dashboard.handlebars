@@ -2,14 +2,14 @@
 <div class="card">
     <h3 class="card-header">Daily Journal</h3>
     <form class="card-body new-post-form" id="new-post-form">
-        <label for="post-title" class="form-label">Workout</label>
+        <label for="post-title" class="form-label">Date Created</label>
         <input type="text" id="title" name="title" class="form-input" />
 
 
-        <label class="form-label" for="content">Meal</label>
+        <label class="form-label" for="content">Title</label>
         <input id="content" name="content" class="form-input" />
 
-        <label class="form-label" for="content">Motivation</label>
+        <label class="form-label" for="content">Description</label>
         <input id="content" name="daily motivation" class="form-input" />
         
     </form>
@@ -20,22 +20,29 @@
     </form>
   </div>
 
-{{#if posts.length}}
+{{#if blogs.length}}
+<div class="card">
   <div class="col-md-6 post-list">
     <h3>All Posts:</h3>
 
-    {{#each posts as |post|}}
-    <div class="row">
-      <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+    {{#each blogs as |post|}}
+    <div class="card-header flex-row justify-space-between">
+      <h2>
+        <a href="/blog/{{id}}">{{title}}</a>
+      </h2>
+      <div>
+        Posted by {{blog.user_id}} on {{blog.date_created}}
       </div>
     </div>
-    {{/each}}
+    <div class="card-body">
+      {{blog.description}}
+    </div>
+  </article>
+  {{/each}}
+</div>
   </div>
   {{/if}}
+</div>
 </div>
 
 <script src="/js/dashboard.js"></script>
