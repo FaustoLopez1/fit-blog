@@ -2,10 +2,10 @@ require("dotenv").config();
 const fetch = require("node-fetch");
 const router = require("express").Router();
 const { getUserFromSession } = require("../util/helpers");
-const { User } = require("../models");
+const { User, Blog } = require("../models");
+const withAuth = require("../util/withAuth");
 
 // use withAuth middleware to redirect from protected routes.
-// const withAuth = require("../util/withAuth");
 
 // example of a protected route
 // router.get("/users-only", withAuth, (req, res) => {
@@ -41,8 +41,32 @@ router.get("/signup", (req, res) => {
 });
 
 //dashboard page
-router.get("/dashboard", (req, res) => {
-  res.render("dashboard", { title: "Dashboard" });
+
+// Suppose to add posts to dashboard
+router.get("/dashboard", withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.userId, {
+      attributes: { exclude: ["password"] },
+      include: [
+        {
+          model: Blog,
+          attributes: ["description", "title", "date_created"],
+        },
+      ],
+    });
+    const blogs = userData.get({ plain: true });
+    console.log({
+      ...blogs,
+      isLoggedIn: req.session.isLoggedIn,
+    });
+    res.render("dashboard", {
+      ...blogs,
+      isLoggedIn: req.session.isLoggedIn,
+    });
+  } catch (err) {
+    res.status(500).send("Server Error");
+    console.log(err);
+  }
 });
 
 // //main page route
@@ -79,6 +103,5 @@ router.get("/nutrition", async (req, res) => {
   const user = getUserFromSession(req);
   res.render("nutrition", { title: "Nutrition", user, searchResults });
 });
-
 
 module.exports = router;

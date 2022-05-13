@@ -2,15 +2,13 @@
 <div class="card">
     <h3 class="card-header">Daily Journal</h3>
     <form class="card-body new-post-form" id="new-post-form">
-        <label for="post-title" class="form-label">Workout</label>
+        <label for="post-title" class="form-label">Title</label>
         <input type="text" id="title" name="title" class="form-input" />
 
 
-        <label class="form-label" for="content">Meal</label>
+        <label class="form-label" for="content">Description</label>
         <input id="content" name="content" class="form-input" />
 
-        <label class="form-label" for="content">Motivation</label>
-        <input id="content" name="daily motivation" class="form-input" />
         
     </form>
 </div>
@@ -20,21 +18,25 @@
     </form>
   </div>
 
-{{#if posts.length}}
+{{#if blogs.length}}
   <div class="col-md-6 post-list">
     <h3>All Posts:</h3>
 
-    {{#each posts as |post|}}
+    {{#each blogs as |post|}}
+    
     <div class="row">
       <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
+        <h4>{{post.title}}</h4>
+        <h4>{{post.description}}</h4>
+        <h4>{{post.date_created}}</h4>
+
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
-    {{/each}}
   </div>
+    {{/each}}
   {{/if}}
 </div>
 
