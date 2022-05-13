@@ -12,6 +12,7 @@ Kelly is wanting to live a healthier lifestyle, inspired by her friends and fami
 - [License](#license)
 
 ## Installation
+![Alt Text](https://media.giphy.com/media/aasqI8O4EKfCGVKIRM/giphy.gif)
 
 1. Run `npm i`.
 2. You will need an existing MySQL database.
