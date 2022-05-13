@@ -15,10 +15,14 @@ html {
 h4 {
   text-align: right;
   padding: 3%;
+  font-family:  Helvetica, sans-serif, Arial;
+  font-weight: lighter;
 }
 
 h3 {
   color: black;
+  font-family: Helvetica, sans-serif, Arial;
+  font-weight: 200;
 }
 /* .row {
   display: inline;
@@ -29,9 +33,11 @@ h3 {
 .card {
   display: flex;
   flex-wrap: wrap;
+  color:rgb(22, 17, 16);
+  background-color: rgb(244, 230, 214);
 }
 #searchform {
-  background-color: rgb(245, 158, 172);
+  background-color: rgb(207, 142, 73);
   width: 300px;
   height: 44px;
   border-radius: 5px;
@@ -40,9 +46,19 @@ h3 {
   align-items: center;
 }
 h2 {
-  color: rgba(217, 248, 248, 0.952);
-  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgba(255, 255, 255, 0.952);
+  font-family: Helvetica, "Times New Roman", Times, serif;
+  font-weight: 200;
 }
 
 /* .btn-logout {
 } */
+
+html {
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+header {
+  font-family: Helvetica, Arial, Gillsans;
+  font-weight: lighter;
+}
