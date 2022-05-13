@@ -11,6 +11,7 @@ const getUserFromSession = async (req) => {
   return user;
 };
 
+
 module.exports = {
   // add helper functions for handlebars here
   // Example:

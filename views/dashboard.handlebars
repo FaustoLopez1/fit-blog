@@ -1,6 +1,7 @@
 {{!-- {{if logged in}} --}}
 <div class="card">
-    <h3 class="card-header">Daily Journal</h3>
+  <div class ="container">
+    <h3 class="card-header">My Daily Journal</h3>
     <form class="card-body new-post-form" id="new-post-form">
         <label for="post-title" class="form-label">Title</label>
         <input type="text" id="title" name="title" class="form-input" />
@@ -9,7 +10,7 @@
         <label class="form-label" for="content">Description</label>
         <input id="content" name="content" class="form-input" />
 
-        
+
     </form>
 </div>
       <div class="form-group">
@@ -17,9 +18,11 @@
       </div>
     </form>
   </div>
+      </div>
 
 {{#if blogs.length}}
 <div class="card">
+  <div class="container">
   <div class="col-md-6 post-list">
     <h3>All Posts:</h3>
 
@@ -41,5 +44,5 @@
   {{/if}}
 </div>
 </div>
-
+</div>
 <script src="/js/dashboard.js"></script>
