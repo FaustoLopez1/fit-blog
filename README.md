@@ -20,7 +20,7 @@ Kelly is wanting to live a healthier lifestyle, inspired by her friends and fami
 
 ## Usage
 
-<!-- IMAGE/GIF SHOWN HERE OF WEBPAGE -->
+![Alt Text](https://media.giphy.com/media/aasqI8O4EKfCGVKIRM/giphy.gif)
 
 1. Create account or Login if you have an existing account
 2. Post your workout, meal, or your daily motivation
