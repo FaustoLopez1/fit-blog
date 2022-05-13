@@ -3,9 +3,9 @@ const fetch = require("node-fetch");
 const router = require("express").Router();
 const { getUserFromSession } = require("../util/helpers");
 const { User, Blog } = require("../models");
+const withAuth = require("../util/withAuth");
 
 // use withAuth middleware to redirect from protected routes.
-const withAuth = require("../util/withAuth");
 
 // example of a protected route
 // router.get("/users-only", withAuth, (req, res) => {
@@ -41,6 +41,8 @@ router.get("/signup", (req, res) => {
 });
 
 //dashboard page
+
+// Supposed to add posts to dashboard
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.userId, {

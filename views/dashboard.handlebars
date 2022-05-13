@@ -26,21 +26,20 @@
     <h3>All Posts:</h3>
 
     {{#each blogs as |post|}}
-    <div class="card-header flex-row justify-space-between">
-      <h2>
-        <a href="/blog/{{id}}">{{title}}</a>
-      </h2>
-      <div>
-        Posted by {{blog.user_id}} on {{blog.date_created}}
+    
+    <div class="row">
+      <div class="col-md-8">
+        <h4>{{post.title}}</h4>
+        <h4>{{post.description}}</h4>
+        <h4>{{post.date_created}}</h4>
+
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
-    <div class="card-body">
-      {{blog.description}}
-    </div>
-  </article>
-  {{/each}}
-</div>
   </div>
+    {{/each}}
   {{/if}}
 </div>
 </div>

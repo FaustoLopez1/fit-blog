@@ -76,12 +76,17 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
+  console.log(req.body);
   Blog.create({
     title: req.body.title,
     description: req.body.content,
+
     user_id: req.session.userId,
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then((dbPostData) => {
+      res.json(dbPostData);
+    })
+
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -115,6 +120,7 @@ router.put("/:id", withAuth, (req, res) => {
 router.delete("/:id", withAuth, (req, res) => {
   Blog.destroy({
     where: {
+      user_id: req.session.userId,
       id: req.params.id,
     },
   })
